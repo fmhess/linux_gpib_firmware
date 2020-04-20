@@ -1,0 +1,3 @@
+#don't mess with carriage return/line feed in firmware files
+*.hex binary
+
