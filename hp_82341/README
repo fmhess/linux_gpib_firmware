@@ -1,0 +1,12 @@
+The firmware file can be uploaded to your 82341C or 82341D board
+during configuration when gpib_config is run.  Example:
+
+gpib_config --minor 0 --init-data ./hp_82341c_fw.bin 
+
+File descriptions:
+
+hp_82341c_fw.bin : firmware for Xilinx XC3064 found on 82341C boards, 
+	may also work with 82341B
+
+hp_82341d_fw.bin : firmware for Xilinx XC5202 found on the plug-n-play 
+	82341D boards.

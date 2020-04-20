@@ -1,0 +1,15 @@
+The firmware files can be uploaded to your NI GPIB-USB-B adapter
+using fxload.  Example:
+
+fxload -D /proc/bus/usb/001/002 -I niusbb_firmware.hex -s niusbb_loader.hex
+
+If you wish for the firmware to be automatically loaded through hotplug, 
+copy the firmware files to the /usr/share/usb/ni_usb_gpib/ directory
+(or wherever the /etc/hotplug/usb/ni_usb_gpib script expects to find them).
+
+Thanks go to Michael Ritzert for figuring out how to extract the firmware
+from a usb sniff log.  The log that was used is included
+(file name is "ni-usb-b-initialization-log.txt"), as well as the perl 
+script for creating the hex file ("firmware_extract.pl").
+
+

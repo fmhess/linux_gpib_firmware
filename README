@@ -1,0 +1,27 @@
+This tarball contains firmware for the following devices:
+
+NI GPIB-USB-B	(subdir ni_gpib_usb_b/)
+Agilent 82357A and 82357B	(subdir agilent_82357a/) 
+Agilent (HP) 82341C and 82341D	(subdir hp_82341/)
+Agilent (HP) 82350A	(subdir hp_82350a/)
+
+*****
+
+NI GPIB-USB-B and Agilent 82357A/B:
+
+The firmware can be uploaded to the device with the fxload
+program, and generally needs to be uploaded each time the device is
+plugged into your computer.  Linux drivers and 
+hotplug scripts for these devices are available
+as part of the Linux GPIB package at http://linux-gpib.sourceforge.net.
+See http://linux-hotplug.sourceforge.net for more information about linux
+hotplugging.
+
+*****
+
+Agilent (HP) 82341C, 82341D, and 82350A:
+
+The firmware for these boards is uploaded by passing the appropriate 
+firmware file to gpib_config using the -I or --init-data command 
+line option.
+
