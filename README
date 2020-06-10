@@ -1,4 +1,6 @@
-This repository contains firmware for the following devices:
+This repository contains firmware for various devices
+supported by Linux-GPIB.  See the README in the
+appropriate subdirectory for more information:
 
 NI GPIB-USB-B	(subdir ni_gpib_usb_b/)
 NI GPIB-USB-HS+	(subdir ni_gpib_usb_hsp/)
@@ -11,35 +13,11 @@ as part of the Linux-GPIB package at
 
 https://linux-gpib.sourceforge.io
 
-
-*****
-NI GPIB-USB-B and Agilent 82357A/B:
-
-The firmware can be uploaded to the device with the fxload
-program, and generally needs to be uploaded each time the device is
-plugged into your computer.  udev rules which perform this upload
-are included as part of Linux-GPIB.
-
-
-*****
-NI GPIB-USB-HS+:
-
-The GPIB-USB-HS+ may require a one-time firmware initialization.  If the adapter
-requires firmware, it will have a product id of 0x761e.  The product
-id changes to 0x7618 after the adapter has been programmed.
-
-The firmware initialization may be
-performed by plugging the device into a Windows computer with the
-NI drivers installed.  Alternatively, you may use the hsplus_load program 
-under Linux to upload the stage1 and stage2 firmware located in the 
-ni_gpib_usb_hsp subdirectory.  The hsplus_load program is available at
-
-https://github.com/fmhess/hsplus_load
-
-
-*****
-Agilent (HP) 82341C, 82341D, and 82350A:
-
-The firmware for these boards is uploaded by passing the appropriate 
-firmware file to gpib_config using the -I or --init-data command 
-line option.
+Some of the devices have udev rules included in Linux-GPIB which 
+will automatically load their firmware.  To use such rules,
+make sure the Linux-GPIB rules are in /etc/udev/rules.d (or
+at least symlinked there).  Also you will need to copy
+the firmware files to wherever the gpib_udev_fxloader 
+script installed by Linux-GPIB expects to find the
+firmware for your device (in a default configuration it would be a 
+subdirectory under /usr/local/share/usb/).

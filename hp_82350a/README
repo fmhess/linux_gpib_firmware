@@ -1,0 +1,4 @@
+The firmware file can be uploaded to your 82350A board
+during configuration when gpib_config is run.  Example:
+
+gpib_config --minor 0 --init-data ./agilent_82350a.bin

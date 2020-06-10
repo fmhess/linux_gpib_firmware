@@ -1,6 +1,15 @@
+The firmware can be uploaded to the device with the fxload
+program, and generally needs to be uploaded each time the device is
+plugged into your computer.  udev rules which perform this upload
+are included as part of Linux-GPIB.
+
 The firmware files can be uploaded to your Agilent 82357A/B adapter
 using fxload.  The 82357a_fw.hex file is for the 82357A and the
 measat_releaseX1.8.hex file is for the 82357B.
+
+The firmware must be uploaded to the device every time it is powered on.
+There are udev rules included as part of Linux-GPIB
+which can perform this upload automatically.
 
 There is apparently a bug in the 82357B firmware which causes the
 first firmware upload to an 82357B to fail.  After the first
@@ -17,9 +26,9 @@ automatically load the firmware twice.
 
 Examples:
 
-fxload -D /proc/bus/usb/001/002 -I 82357a_fw.hex 
+fxload -D /dev/bus/usb/001/002 -I 82357a_fw.hex 
 
-fxload -t fx2 -D /proc/bus/usb/001/003 -I measat_releaseX1.8.hex
+fxload -t fx2 -D /dev/bus/usb/001/003 -I measat_releaseX1.8.hex
 
 
 Note the 82357B requires the "-t fx2" command line option of fxload.

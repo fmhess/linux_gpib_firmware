@@ -1,0 +1,11 @@
+The GPIB-USB-HS+ may require a one-time firmware initialization.  If the adapter
+requires firmware, it will have a product id of 0x761e.  The product
+id changes to 0x7618 after the adapter has been programmed.
+
+The firmware initialization may be
+performed by plugging the device into a Windows computer with the
+NI drivers installed.  Alternatively, you may use the hsplus_load program 
+under Linux to upload the stage1 and stage2 firmware located in this 
+directory.  The hsplus_load program is available at
+
+https://github.com/fmhess/hsplus_load
