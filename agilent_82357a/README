@@ -32,8 +32,3 @@ fxload -t fx2 -D /dev/bus/usb/001/003 -I measat_releaseX1.8.hex
 
 
 Note the 82357B requires the "-t fx2" command line option of fxload.
-
-If you wish for the firmware to be automatically loaded through hotplug, 
-copy the firmware file to the /usr/share/usb/agilent_8237a/ directory
-(or wherever the /etc/hotplug/usb/agilent_82357a script expects to find it).
-
